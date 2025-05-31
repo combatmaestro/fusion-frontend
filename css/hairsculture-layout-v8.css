@@ -10,6 +10,69 @@
   color: #fff;
 }
 
+.large-logo {
+  width: 350px;
+  height: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .large-logo {
+    width: 220px;
+  }
+}
+.siteLogo {
+  float: left;
+  position: sticky;
+  transition: all 0.5s ease;
+  width: auto; /* Let the image control the size */
+}
+
+.siteLogo img.logo-img {
+  width: 100%;
+  max-width: 240px; /* Bigger logo for desktop */
+  height: auto;
+  display: block;
+  margin-top: -85px; /* Move the logo upward */
+}
+
+/* Fixed state - shrink a little if needed */
+.fixed .siteLogo img.logo-img {
+  max-width: 200px;
+  margin-top: -60px;
+}
+
+/* Medium screens */
+@media only screen and (max-width: 920px) {
+  .siteLogo img.logo-img {
+        max-width: 200px;
+        margin-left: -29px;
+        margin-top: -35px;
+  }
+
+.fixed .siteLogo img.logo-img {
+  max-width: 190px;
+  margin-top: -10px;
+}
+}
+
+/* Small screens */
+@media only screen and (max-width: 480px) {
+  .siteLogo img.logo-img {
+        margin-left: -20px;
+        max-width: 170px;
+        margin-top: -12px;
+  }
+
+.fixed .siteLogo img.logo-img {
+  max-width: 170px;
+  margin-top: -10px;
+}
+
+}
+
+
+
 .info {
   color: red;
 }
@@ -4820,7 +4883,7 @@ img {
   padding-top: 15px;
 }
 
-.siteLogo {
+/* .siteLogo {
   float: left;
   position: sticky;
   transition: all 0.5s ease;
@@ -4829,7 +4892,7 @@ img {
 
 .fixed .siteLogo {
   width: 90px;
-}
+} */
 
 .serveBtns {
   float: right;
@@ -6869,9 +6932,9 @@ img {
     background-color: transparent;
   }
 
-  .fixed .siteLogo {
+  /* .fixed .siteLogo {
     padding-top: 39px;
-  }
+  } */
 
   .consScrl {
     display: none;
@@ -6974,9 +7037,9 @@ img {
     width: 50%;
   }
 
-  .siteLogo {
+  /* .siteLogo {
     width: 110px;
-  }
+  } */
 
   .about-title {
     font-size: 23pt;
@@ -7111,13 +7174,13 @@ img {
     padding-right: 50px;
   }
 
-  .siteLogo {
+  /* .siteLogo {
     width: 95px;
   }
 
   .fixed .siteLogo {
     width: 81px;
-  }
+  } */
 
   .container {
     padding: 0 45px;
@@ -7939,13 +8002,13 @@ img {
     display: none;
   }
 
-  .siteLogo {
+  /* .siteLogo {
     width: 85px;
   }
 
   .fixed .siteLogo {
     width: 70px;
-  }
+  } */
 
   .enqu-form .form-group:not(.input-not-empty) .form-control:not(:focus) {
     font-size: 10pt;
@@ -8537,9 +8600,9 @@ img {
     padding: 0 25px;
   }
 
-  .siteLogo {
+  /* .siteLogo {
     width: 120px;
-  }
+  } */
 
   .btmQuickLInks li {
     width: 49%;
