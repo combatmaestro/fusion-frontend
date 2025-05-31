@@ -33,38 +33,7 @@
   color: #fff;
   background-color: #000;
 }
-.siteLogo {
-    position: sticky;
-    display: block;
-    width: 220px;
-    transition: none !important;
-    z-index:1;
-  }
 
-  .siteLogo img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  /* Ensure fixed state doesn't override size */
-  .fixed .siteLogo {
-    width: 160px !important;
-    padding-top: 45px !important;
-  }
-
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    .siteLogo {
-      width: 160px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .siteLogo {
-      width: 160px;
-    }
-  }
 #captcha {
   padding: 7px;
 }
@@ -4051,7 +4020,6 @@ em.mm-counter + a.mm-next + label.mm-toggle + span {
   background: #ccc;
   color: #333;
   height: 40px;
-  z-index: 10;
 }
 .mh-head a {
   color: inherit;
@@ -4850,6 +4818,17 @@ img {
 .fixed .consScrl {
   opacity: 1;
   padding-top: 15px;
+}
+
+.siteLogo {
+  float: left;
+  position: sticky;
+  transition: all 0.5s ease;
+  width: 133px;
+}
+
+.fixed .siteLogo {
+  width: 90px;
 }
 
 .serveBtns {
@@ -6890,6 +6869,9 @@ img {
     background-color: transparent;
   }
 
+  .fixed .siteLogo {
+    padding-top: 39px;
+  }
 
   .consScrl {
     display: none;
@@ -6992,8 +6974,9 @@ img {
     width: 50%;
   }
 
-  
-  
+  .siteLogo {
+    width: 110px;
+  }
 
   .about-title {
     font-size: 23pt;
@@ -7128,6 +7111,13 @@ img {
     padding-right: 50px;
   }
 
+  .siteLogo {
+    width: 95px;
+  }
+
+  .fixed .siteLogo {
+    width: 81px;
+  }
 
   .container {
     padding: 0 45px;
@@ -7949,7 +7939,13 @@ img {
     display: none;
   }
 
-  
+  .siteLogo {
+    width: 85px;
+  }
+
+  .fixed .siteLogo {
+    width: 70px;
+  }
 
   .enqu-form .form-group:not(.input-not-empty) .form-control:not(:focus) {
     font-size: 10pt;
@@ -8278,6 +8274,10 @@ img {
     padding-top: 0px;
   }
 
+  /* .fixed .siteLogo {
+    display: none;
+  } */
+
   #page {
     font-size: 10pt;
   }
@@ -8537,7 +8537,9 @@ img {
     padding: 0 25px;
   }
 
- 
+  .siteLogo {
+    width: 120px;
+  }
 
   .btmQuickLInks li {
     width: 49%;
@@ -8782,7 +8784,6 @@ img {
   text-decoration: none;
   transition: transform 0.3s ease;
 }
-
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
