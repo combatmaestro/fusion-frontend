@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fusion Fame Hair Studio - #1 Non-Surgical Hair Replacement Experts in Hyderabad. Get natural results with zero pain or surgery." />
+    <meta name="keywords" content="Hair fixing Hyderabad, Hair replacement Hyderabad, Non-surgical hair fixing, Hair patch, Hair loss treatment Hyderabad" />
+    <meta name="author" content="Fusion Fame Hair Studio" />
+    <title>Hair Fixing Hyderabad | Non-Surgical Hair Replacement | Fusion Fame</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        color: #333;
+      }
+      .top-strip {
+        background: seagreen;
+        color: ghostwhite;
+        padding: 10px;
+        text-align: center;
+        font-size: 1.3rem;
+      }
+      .top-strip .button-link {
+        display: inline-block;
+        margin-top: 6px;
+        background: #ffcc00;
+        color: #32124d;
+        padding: 6px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .top-strip .button-link:hover {
+        background: #e6b800;
+      }
+      header {
+        background: #431e61;
+        color: white;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      .hero-banner {
+        background-color: #431e61;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+      .responsive-banner {
+        width: 100%;
+        height: auto;
+        max-width: 1400px;
+        display: block;
+        margin: 0 auto;
+      }
+      header h1 {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 8px #000;
+      }
+      header p {
+        font-size: 1.2rem;
+        text-shadow: 1px 1px 5px #000;
+      }
+      .cta {
+        margin-top: 20px;
+      }
+      .cta a {
+        background: #ff3366;
+        color: #fff;
+        padding: 12px 24px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: background 0.3s ease;
+        cursor: pointer;
+      }
+      .cta a:hover {
+        background: #e6004d;
+      }
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+      .modal-content {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 500px;
+        width: 90%;
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      }
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        color: #aaa;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .modal-content input, .modal-content textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .modal-content button {
+        background: #431e61;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .modal-content button:hover {
+        background: #32124d;
+      }
+      section.features {
+        padding: 60px 20px;
+        background: #f9f9f9;
+        text-align: center;
+      }
+      section.features h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+      .feature-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
+      .feature {
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px;
+        max-width: 300px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      .feature img {
+        max-width: 80px;
+        margin-bottom: 15px;
+      }
+      section.testimonials {
+        padding: 60px 20px;
+        background: #fff;
+        text-align: center;
+      }
+      section.testimonials h2 {
+        margin-bottom: 40px;
+      }
+      .testimonial {
+        max-width: 600px;
+        margin: auto;
+        font-style: italic;
+        color: #555;
+      }
+      section.reviews {
+        padding: 60px 20px;
+        background: #f0f0f0;
+        text-align: center;
+      }
+      section.reviews h2 {
+        margin-bottom: 40px;
+      }
+      .stars {
+        font-size: 1.5rem;
+        color: gold;
+        margin-bottom: 10px;
+      }
+      .owl-carousel .item {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        margin: 10px;
+      }
+      footer {
+        background: #222;
+        color: #fff;
+        padding: 30px 20px;
+        text-align: center;
+      }
+      footer a {
+        color: #ff3366;
+        text-decoration: none;
+      }
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+        .feature-grid {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+<div class="top-strip">
+      📍 Road No. 10, Banjara Hills, Hyderabad &nbsp; | &nbsp; ☎️ +91 98765 43210 &nbsp; | &nbsp;&nbsp;&nbsp;
+      <br/>
+      <a class="button-link" href="https://fusionfamehairstudio.com" target="_blank">Check our website</a>
+    </div>
+    <header>
+      <div class="hero-banner">
+        <img src="images/promo-banner.png" alt="Hair replacement promotion" class="responsive-banner" />
+      </div>
+      <h1>Say Goodbye to Hair Loss</h1>
+      <p>100% Natural-Looking Non-Surgical Hair Replacement in Hyderabad</p>
+      <div class="cta">
+        <a id="openModalBtn">Book Free Consultation</a>
+      </div>
+    </header>
+
+    <div id="consultationModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('consultationModal').style.display='none'">&times;</span>
+        <h2>Book Your Free Consultation</h2>
+        <input type="text" placeholder="Full Name" required />
+        <input type="tel" placeholder="Phone Number" required />
+        <input type="email" placeholder="Email Address" required />
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+
+    <section class="features">
+      <h2>Why Choose Fusion Fame?</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="no surgery">
+          <h3>No Surgery, No Pain</h3>
+          <p>Get a full head of hair without needles or downtime.</p>
+        </div>
+        <div class="feature">
+          <img src="https://cdn-icons-png.flaticon.com/512/679/679720.png" alt="natural look">
+          <h3>Natural Look</h3>
+          <p>Undetectable hair patches that blend perfectly.</p>
+        </div>
+        <div class="feature">
+          <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="same day result">
+          <h3>Same-Day Transformation</h3>
+          <p>Walk in bald, walk out confident — in just hours!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial">
+        <p>
+          "Fusion Fame completely changed my life. I look and feel 10 years younger. The staff were amazing!"<br />
+          <strong>- Rohit, Hyderabad</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <h2>Our Google Reviews</h2>
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="stars">★★★★★</div>
+          <p>"Very professional and friendly staff. My hair looks natural and I feel amazing. Highly recommended!"</p>
+          <strong>- Sandeep R.</strong>
+        </div>
+        <div class="item">
+          <div class="stars">★★★★★</div>
+          <p>"One of the best experiences I’ve had. The transformation was unbelievable. Worth every rupee!"</p>
+          <strong>- Meena K.</strong>
+        </div>
+        <div class="item">
+          <div class="stars">★★★★★</div>
+          <p>"Excellent service and very professional approach. The results were beyond my expectations."</p>
+          <strong>- Arjun V.</strong>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2025 Fusion Fame Hair Studio, Hyderabad<br />
+        <a href="tel:+919876543210">Call Now</a> |
+        <a href="#contact">WhatsApp Consultation</a>
+      </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+          loop:true,
+          margin:10,
+          nav:false,
+          autoplay:true,
+          autoplayTimeout:4000,
+          autoplayHoverPause:true,
+          responsive:{
+            0:{ items:1 },
+            600:{ items:1 },
+            1000:{ items:2 }
+          }
+        });
+
+        document.getElementById('openModalBtn').addEventListener('click', function () {
+          document.getElementById('consultationModal').style.display = 'flex';
+        });
+
+        window.onclick = function(event) {
+          const modal = document.getElementById('consultationModal');
+          if (event.target === modal) {
+            modal.style.display = "none";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

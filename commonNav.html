@@ -1,0 +1,101 @@
+<div id="mobMEnu" class="mobMenu float-panel" data-top="0" data-scroll="200">
+    <div class="mh-head first mh-align-left Sticky">
+        <div class="mob-num">
+            FOR FREE CONSULTATION -  India <a href="tel:+91 7873833720">+91 7873833720</a>
+            <div class="clear"></div>
+        </div>
+        <div class="mob-num-respsv">
+            <div id="marquee" >
+                India <a href="tel:+91 7873833720">+91 7873833720</a>
+            </div>
+        </div>
+        <span class="mh-btns-left">
+            <span class="mh-btns-left">
+                <a href="#menu" class="hamburger hamburger--collapse"><span class="hamburger-box"><span class="hamburger-inner"></span></span></a>
+            </span>
+        </span>
+        <span class="mh-text">Menu</span>
+    </div>
+    <!-- Replaced <mobilemenu> with static content -->
+
+    <nav id="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Fusion Fame</a></li>
+            <li><a href="what-we-do.html">What We Do</a>
+                <ul>
+                    <li><a href="hair-extensions.html">Hair Extensions</a></li>
+                    <li><a href="hair-replacement.html">Hair Replacement</a></li>
+                    <li><a href="hair-fixing.html">Hair Fixing</a></li>
+                </ul>
+            </li>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="care.html">Care / Maintenance</a></li>
+            <li><a href="faq.html">FAQ's</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+ 
+<header class="headerWrap float-panel" data-top="0" data-scroll="200">
+    <div class="header-top">
+        <div class="container" id="topcall">
+            <!-- Replaced <topcall> with static content -->
+            <div class="topCOnsul">
+                CALL -  India <a href="tel:+91 7873833720">+91 7873833720</a>
+                <div class="clear"></div>
+            </div>
+            <div class="primary-menu" id="primary-menu">
+                <!-- Replaced <primary-menu> with static content -->
+                <div id="smoothmenu1" class="ddsmoothmenu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">Fusion Fame</a></li>
+                        <li><a href="what-we-do.html">What We Do</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="header-btm">
+        <div class="container">
+            <figure class="siteLogo"><img src="./images/Fusion-Fame-Hair-Studio.png" class="logo-img" alt="Fusion Fame - Best Hair patch service in hyderabad" width="300" height="140"></figure>
+            <div class="serveBtns" id="top-serv-menu">
+                <!-- Replaced <top-serv-menu> with static content -->
+                <ul>
+                    <li class="hom-scrol"><a href="index.html">Home</a></li>
+                    <li><a href="hair-extensions.html">Hair Extensions</a></li>
+                    <li><a href="hair-replacement.html">Hair Replacement</a></li>
+                    <li><a href="hair-fixing.html">Hair Fixing</a></li>
+                </ul>
+            </div>
+            <div class="consScrl">
+                FOR FREE CONSULTATION -  India +91 7873833720
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="whatsappBtn"></div>
+    </div>
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+          Promise.all([
+          fetch("whatsappCommon.html").then((res) => res.text()),
+        ]).then(([navHTML]) => {
+          document.getElementById("whatsappBtn").outerHTML = navHTML;})
+        document.addEventListener('DOMContentLoaded', function () {
+          if (hamburger && menu) {
+            hamburger.addEventListener('click', function () {
+              this.classList.toggle('is-active'); // animation class
+              menu.classList.toggle('menu-open'); // visibility class
+            });
+          }
+        });
+      </script>
+      
+</header>
+

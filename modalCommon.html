@@ -1,0 +1,135 @@
+<div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Request a call back</h4>
+          <div class="close">&times;</div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="modal-body" id="rootmodal">
+          <div class="enqury-MOdel">
+            <form>
+              <div class="enqu-form">
+                <div id="frmContact">
+                  <div id="mail-statusQuick"></div>
+                  <div class="form-group">
+                    <span id="userName-infoQuick" class="info"></span>
+
+                    <input
+                      class="form-control demoInputBoxQuick"
+                      type="text"
+                      name="userName"
+                      id="userNameQuick"
+                      placeholder="Enter Your Name"
+                      required
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <span id="userEmail-infoQuick" class="info"></span>
+                    <input
+                      class="form-control demoInputBoxQuick"
+                      type="text"
+                      name="userEmail"
+                      id="userEmailQuick"
+                      placeholder="Enter Your Email"
+                      required
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <span id="phone-infoQuick" class="info"></span>
+
+                    <input
+                      class="form-control demoInputBoxQuick"
+                      type="text"
+                      name="mobile"
+                      id="phoneQuick"
+                      placeholder="Enter Your Mobile Number"
+                      required
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <span id="comments-infoQuick" class="info"></span>
+                    <textarea
+                      name="commentsQuick"
+                      id="commentsQuick"
+                      class="form-control txtar"
+                      placeholder="Comments (if any)"
+                      cols=""
+                      rows=""
+                    ></textarea>
+                  </div>
+                
+                  <div class="enquiry-block">
+                    <div class="enquiry-btn">
+                      <button
+                        name="submit"
+                        class="btnAction submit-btn"
+                        id="submit"
+                      >
+                        SUBMIT
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <style>
+                .captExt {
+                  color: #353535;
+                  display: block;
+                  padding: 8px 0 5px;
+                  width: 100%;
+                  font-size: 10.5pt;
+                  font-family: "Montserrat", sans-serif;
+                }
+                .elem-group {
+                  padding-bottom: 10px;
+                }
+              </style>
+            </form>
+            <script
+              async
+              src="https://www.google.com/recaptcha/api.js?render=6Le8imcbAAAAABhZTVIXqKYojcxzWDUxZrQ6KyXg"
+            ></script>
+            <script>
+              Promise.all([
+                fetch("commonNav.html").then((res) => res.text()),
+                fetch("footer.html").then((res) => res.text()),
+              ]).then(([navHTML, footerCommon]) => {
+                document.getElementById("commonNav").outerHTML = navHTML;
+                document.getElementById("footerCommon").outerHTML =
+                  footerCommon;
+              });
+            </script>
+          
+            <style>
+              .grecaptcha-badge {
+                z-index: 60000000 !important;
+              }
+              #alert span {
+                display: block;
+                color: #fff;
+                margin: 10px 0;
+                text-align: center;
+                border-radius: 2px;
+                padding: 10px;
+              }
+              #alert span.success {
+                background-color: #07b700;
+              }
+              #alert span.error {
+                background-color: #9e0204;
+              }
+            </style>
+
+            <div class="clear"></div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+    </div>
