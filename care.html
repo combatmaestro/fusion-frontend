@@ -6,7 +6,7 @@
       Best Hair Wig Fixing in Hyderabad | Non surgical hair replacement in
       Hyderabad | Hair wig fixing in Hyderabad
     </title>
-    <script src="mainScript.js" defer></script>
+    
     <meta
       name="description"
       content="Best non-surgical hair replacement in Hyderabad. Affordable hair patch, wig fixing, and hair fixing services tailored to your needs. Regain your confidence with natural-looking hair solutions."
@@ -73,7 +73,7 @@
       sizes="16x16"
       href="images/favicons/favicon-16x16.png"
     />
-    <link rel="manifest" href="images/favicons/site.webmanifest" />
+
     <link
       rel="mask-icon"
       href="images/favicons/safari-pinned-tab.svg"
@@ -93,13 +93,19 @@
     <meta name="theme-color" content="#ffffff" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/hairsculture-layout-v8.css?ver=1" />
-    <link rel="stylesheet" href="layout/style.css" />
+    
     <link rel="stylesheet" href="js/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="js/assets/owl.theme.default.min.css" />
     <link href="css/hairsculture-layout-v8.css" rel="stylesheet" />
-    <link href="css/animations.css" rel="stylesheet" />
 
+    <script src="mainScript.js" defer></script>
+        <script src="js/jquery.min.js"></script>
+    <script src="js/menu/menu.js"></script>
+    <script src="js/css3-animate-it.js"></script>
+    <script src="js/jqueryAll.js"></script>
+    <script src="layout/script.js"></script>
+
+     <script src="js/jquery.form-validator.min.js"></script>
     <!-- Scripts -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -131,6 +137,22 @@
     <!-- End Google Tag Manager (noscript) -->
     <div id="page">
       <div id="commonNav"></div>
+     <script>
+              Promise.all([
+                fetch("commonNav.html").then((res) => res.text()),
+                fetch("footer.html").then((res) => res.text()),
+              ]).then(([navHTML, footerCommon]) => {
+                document.getElementById("commonNav").outerHTML = navHTML;
+                document.getElementById("footerCommon").outerHTML =
+                  footerCommon;
+                $("#menu").mmenu(); // Initialize Mmenu after nav is loaded
+                $(".mh-head.first").mhead({ scroll: false }); // Ensure these are needed
+                $(".mh-head.second").mhead({ scroll: { hide: 200 } });
+                $(document).ready(function () {
+                  $("#menu").delay(2000).fadeIn(500); // Optional fade-in
+                });
+              });
+            </script>
       <div class="bannerWrapp">
         <img
           src="./images/contact-banner.png"
@@ -276,10 +298,26 @@
               <div class="clear"></div>
             </div>
             <!-- ebd timing -->
-            <div class="sub-btm-branches">
+                        <div class="sub-btm-branches">
               <div class="container">
                 <h3 class="widget-title-btm">OUR <strong>BRANCHES</strong></h3>
                 <div class="clear"></div>
+                <div class="owl-carousel partnerSlide">
+                  <address class="hideBdr">
+                    <h6 style="color: #cbcbcb">Hyderabad</h6>
+                    <p class="adrs" style="width: auto; color: #cbcbcb">
+                      8-2-231/23/1, 1st Floor<br />
+                      Mothi Nagar, Nagarjuna Hills, Punjagutta <br />
+                      Hyderabad, Telangana 500082<br />
+                    </p>
+                    <p style="color: #cbcbcb">
+                      Mob:
+                      <a href="tel:+971 544438816" style="color: #cbcbcb"
+                        >+971 544438816</a
+                      >
+                    </p>
+                  </address>
+                </div>
                 <div id="address-app"><address-app></address-app></div>
 
                 <div class="clear"></div>
@@ -290,14 +328,14 @@
         </div>
       </section>
       <!-- end sub btm wrapp -->
-      <div class="btmQuickLInks">
+      <!-- <div class="btmQuickLInks">
         <div class="container">
           <ul>
             <li>
               <a href="hair-replacement.html"
                 ><img
                   src="images/repl-qlink.png"
-                  alt="non surgical hair replacement in kerala"
+                  alt="non surgical hair replacement in Hyderabad"
                   width="364"
                   height="202"
               /></a>
@@ -306,7 +344,7 @@
               <a href="hair-fixing.html"
                 ><img
                   src="images/fixing-qlink.png"
-                  alt="Best non surgical hair replacement in kochi"
+                  alt="Best non surgical hair replacement in Hyderabad"
                   width="364"
                   height="202"
               /></a>
@@ -315,7 +353,7 @@
               <a href="hair-replacement.html#howDoes"
                 ><img
                   src="images/trans-qlink.png"
-                  alt="Surgical hair replacement in calicut"
+                  alt="Surgical hair replacement in Hyderabad"
                   width="364"
                   height="202"
               /></a>
@@ -323,7 +361,7 @@
           </ul>
           <div class="clear"></div>
         </div>
-      </div>
+      </div> -->
       <footer id="footerCommon"></footer>
       <div class="clear"></div>
     </div>
@@ -334,14 +372,14 @@
       <button id="myBtn">
         <img
           src="images/call-back-large.png"
-          alt="Best hair replacement in Kerala"
+          alt="Best hair replacement in Hyderabad"
           class="hide990"
           width="54"
           height="326"
         />
         <img
           src="images/call-back.png"
-          alt="hair replacement in Kerala"
+          alt="hair replacement in Hyderabad"
           class="view990"
           width="350"
           height="67"
@@ -436,35 +474,13 @@
       </div>
       <div class="clear"></div>
     </div>
-    <script>
-      Promise.all([
-        fetch("commonNav.html").then((res) => res.text()),
-        fetch("footer.html").then((res) => res.text()),
-      ]).then(([navHTML, footerCommon]) => {
-        document.getElementById("commonNav").outerHTML = navHTML;
-        document.getElementById("footerCommon").outerHTML = footerCommon;
-      });
-    </script>
-    <script src="layout/addressslider.js?v=2"></script>
 
-    <script src="layout/layout.js"></script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/webfontloader.js"></script>
     <script src="js/menu/menu.js"></script>
 
-    <script>
-      $(function () {
-        //	create a menu
-        $("#menu").mmenu();
-        //	fire the plugin
-        $(".mh-head.first").mhead({ scroll: false });
-        $(".mh-head.second").mhead({ scroll: { hide: 200 } });
-      });
-      $(document).ready(function () {
-        $("#menu").delay(2000).fadeIn(500);
-      });
-    </script>
+
 
     <script src="js/css3-animate-it.js"></script>
     <script>
@@ -524,57 +540,6 @@
       });
     </script>
 
-    <script>
-      window.addEventListener(
-        "load",
-        function () {
-          function go() {
-            i = i < width ? i + step : 1;
-            m.style.marginLeft = -i + "px";
-          }
-          var i = 0,
-            step = 3,
-            space = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-          var m = document.getElementById("marquee");
-          var t = m.innerHTML; //text
-          m.innerHTML = t + space;
-          m.style.position = "absolute"; // http://stackoverflow.com/questions/2057682/determine-pixel-length-of-string-in-javascript-jquery/2057789#2057789
-          var width = m.clientWidth + 1;
-          m.style.position = "";
-          m.innerHTML =
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space;
-          m.addEventListener(
-            "mouseenter",
-            function () {
-              step = 0;
-            },
-            true
-          );
-          m.addEventListener(
-            "mouseleave",
-            function () {
-              step = 3;
-            },
-            true
-          );
-          var x = setInterval(go, 100);
-        },
-        true
-      );
-    </script>
     <div></div>
     <script>
       // Get the modal
@@ -625,58 +590,6 @@
           event.target.style.display = "none";
         }
       };
-    </script>
-    <script>
-      window.addEventListener(
-        "load",
-        function () {
-          function go() {
-            i = i < width ? i + step : 1;
-            m.style.marginLeft = -i + "px";
-          }
-          var i = 0,
-            step = 3,
-            space = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-          var m = document.getElementById("marquee01");
-          var t = m.innerHTML; //text
-          m.innerHTML = t + space;
-          m.style.position = "absolute";
-
-          var width = m.clientWidth + 1;
-          m.style.position = "";
-          m.innerHTML =
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space;
-          m.addEventListener(
-            "mouseenter",
-            function () {
-              step = 0;
-            },
-            true
-          );
-          m.addEventListener(
-            "mouseleave",
-            function () {
-              step = 3;
-            },
-            true
-          );
-          var x = setInterval(go, 100);
-        },
-        true
-      );
     </script>
    
     <!-- Global site tag (gtag.js) - Google Analytics -->

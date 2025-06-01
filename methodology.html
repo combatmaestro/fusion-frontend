@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="js/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="js/assets/owl.theme.default.min.css" />
     <link href="css/hairsculture-layout-v8.css" rel="stylesheet" />
-    <link href="css/animations.css" rel="stylesheet" />
+    
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -60,7 +60,7 @@
       sizes="16x16"
       href="images/favicons/favicon-16x16.png"
     />
-    <link rel="manifest" href="images/favicons/site.webmanifest" />
+
     <link
       rel="mask-icon"
       href="images/favicons/safari-pinned-tab.svg"
@@ -98,6 +98,11 @@
       }
     </style>
         <script src="mainScript.js" defer></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/menu/menu.js"></script>
+    <script src="js/css3-animate-it.js"></script>
+    <script src="js/jqueryAll.js"></script>
+    <script src="layout/script.js"></script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -115,7 +120,7 @@
       <div class="bannerWrapp">
         <img
           src="./images/contact-banner.png"
-          alt="best hair transplant in kerala"
+          alt="best hair transplant in Hyderabad"
           width="1300"
           height="489"
         />
@@ -161,7 +166,7 @@
             <figure>
               <img
                 src="./images/methodology-image.jpg"
-                alt="best non Surgical Hair Replacement in Kerala"
+                alt="best non Surgical Hair Replacement in Hyderabad"
                 width="494"
                 height="470"
               />
@@ -421,7 +426,7 @@
         </div>
       </section>
       <!-- end sub btm wrapp -->
-      <div class="btmQuickLInks">
+      <!-- <div class="btmQuickLInks">
         <div class="container">
           <ul>
             <li>
@@ -454,7 +459,7 @@
           </ul>
           <div class="clear"></div>
         </div>
-      </div>
+      </div> -->
       <footer id="footerCommon"></footer>
       <div class="clear"></div>
     </div>
@@ -466,7 +471,7 @@
         <img
           src="images/call-back-large.png"
           class="hide990"
-          alt="Best Surgical and Non Surgical Hair Replacement in Kerala"
+          alt="Best Surgical and Non Surgical Hair Replacement in Hyderabad"
           width="54"
           height="326"
         />
@@ -584,6 +589,12 @@
                 document.getElementById("commonNav").outerHTML = navHTML;
                 document.getElementById("footerCommon").outerHTML =
                   footerCommon;
+                $("#menu").mmenu(); // Initialize Mmenu after nav is loaded
+                $(".mh-head.first").mhead({ scroll: false }); // Ensure these are needed
+                $(".mh-head.second").mhead({ scroll: { hide: 200 } });
+                $(document).ready(function () {
+                  $("#menu").delay(2000).fadeIn(500); // Optional fade-in
+                });
               });
             </script>
            
@@ -615,10 +626,6 @@
       <div class="clear"></div>
     </div>
 
-    <script src="layout/vue.js"></script>
-    <script src="layout/addressslider.js?v=2"></script>
-
-    <script src="layout/layout.js"></script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/webfontloader.js"></script>
@@ -692,57 +699,7 @@
         });
       });
     </script>
-    <script>
-      window.addEventListener(
-        "load",
-        function () {
-          function go() {
-            i = i < width ? i + step : 1;
-            m.style.marginLeft = -i + "px";
-          }
-          var i = 0,
-            step = 3,
-            space = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-          var m = document.getElementById("marquee");
-          var t = m.innerHTML; //text
-          m.innerHTML = t + space;
-          m.style.position = "absolute"; // http://stackoverflow.com/questions/2057682/determine-pixel-length-of-string-in-javascript-jquery/2057789#2057789
-          var width = m.clientWidth + 1;
-          m.style.position = "";
-          m.innerHTML =
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space;
-          m.addEventListener(
-            "mouseenter",
-            function () {
-              step = 0;
-            },
-            true
-          );
-          m.addEventListener(
-            "mouseleave",
-            function () {
-              step = 3;
-            },
-            true
-          );
-          var x = setInterval(go, 100);
-        },
-        true
-      );
-    </script>
+
     <div></div>
 
     <script>
@@ -788,58 +745,7 @@
         }
       };
     </script>
-    <script>
-      window.addEventListener(
-        "load",
-        function () {
-          function go() {
-            i = i < width ? i + step : 1;
-            m.style.marginLeft = -i + "px";
-          }
-          var i = 0,
-            step = 3,
-            space = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-          var m = document.getElementById("marquee01");
-          var t = m.innerHTML; //text
-          m.innerHTML = t + space;
-          m.style.position = "absolute";
-
-          var width = m.clientWidth + 1;
-          m.style.position = "";
-          m.innerHTML =
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space;
-          m.addEventListener(
-            "mouseenter",
-            function () {
-              step = 0;
-            },
-            true
-          );
-          m.addEventListener(
-            "mouseleave",
-            function () {
-              step = 3;
-            },
-            true
-          );
-          var x = setInterval(go, 100);
-        },
-        true
-      );
-    </script>
+   
   
    
     <!-- Global site tag (gtag.js) - Google Analytics -->

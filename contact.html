@@ -84,6 +84,38 @@
       #menu {
         display: none;
       }
+
+      #mapModal.modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+#mapModal .modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 6px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#mapModal iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  display: block;
+}
+
     </style>
   </head>
   <body>
@@ -149,8 +181,8 @@
                       <div class="map-btn">
                         <a class="inline cboxElement" href="#gmap-tvm">
                           <img
-                            src="https://ffhairstudio.com/images/google-map-icon.png"
-                            alt="Best non surgical hair restoration in kerala"
+                            src="https://hairsculture.com/images/google-map-icon.png"
+                            alt="Best non surgical hair restoration in Hyderabad"
                             width="181"
                             height="22"
                           />
@@ -375,13 +407,13 @@
         </div>
       </section>
       <!-- end sub btm wrapp -->
-      <div class="btmQuickLInks">
+      <!-- <div class="btmQuickLInks">
         <div class="container">
           <ul>
             <li>
               <a href="hair-replacement.html"
                 ><img
-                  src="https://ffhairstudio.com/images/repl-qlink.png"
+                  src="/images/repl-qlink.png"
                   alt="non surgical hair replacement in calicut"
                   width="364"
                   height="202"
@@ -390,7 +422,7 @@
             <li>
               <a href="hair-fixing.html"
                 ><img
-                  src="https://ffhairstudio.com/images/fixing-qlink.png"
+                  src="/images/fixing-qlink.png"
                   alt="Surgical hair replacement in calicut"
                   width="364"
                   height="202"
@@ -399,7 +431,7 @@
             <li>
               <a href="hair-replacement.html#howDoes"
                 ><img
-                  src="https://ffhairstudio.com/images/trans-qlink.png"
+                  src="/images/trans-qlink.png"
                   alt="hair wig fixing in calicut"
                   width="364"
                   height="202"
@@ -408,7 +440,7 @@
           </ul>
           <div class="clear"></div>
         </div>
-      </div>
+      </div> -->
       <footer id="footerCommon"></footer>
       <div class="clear"></div>
     </div>
@@ -426,13 +458,18 @@
         />
         <img
           src="./images/call-back.png"
-          alt="hair transplant in Kerala"
+          alt="hair transplant in Hyderabad"
           width="350"
           height="67"
           class="view990"
         />
       </button>
     </div>
+    <!-- Map Modal Structure -->
+<div id="mapModal" class="modal">
+  <div class="modal-content" id="modalContent"></div>
+</div>
+
     <!-- The Modal -->
     <div id="myModal" class="modal">
       <!-- Modal content -->
@@ -608,25 +645,6 @@
           },
         });
       });
-    </script>
-    <script>
-      window.addEventListener('load', function () {
-      	function go() {
-      		i = i < width ? i + step : 1;
-      		m.style.marginLeft = -i + 'px';
-      	}
-      	var i = 0, step = 3, space = '     ';
-      	var m = document.getElementById('marquee');
-      	var t = m?.innerHTML;
-      	m?.innerHTML = t + space;
-      	m?.style.position = 'absolute';
-      	var width = (m.clientWidth + 1);
-      	m?.style.position = '';
-      	m?.innerHTML = t + space + t + space + t + space + t + space + t + space + t + space + t + space;
-      	m?.addEventListener('mouseenter', function () { step = 0; }, true);
-      	m?.addEventListener('mouseleave', function () { step = 3; }, true);
-      	var x = setInterval(go, 100);
-      }, true);
     </script>
     <!-- <link href="js/theme-default.min.css" rel="stylesheet" type="text/css" /> -->
     <script src="js/jquery.form-validator.min.js"></script>

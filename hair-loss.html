@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="js/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="js/assets/owl.theme.default.min.css" />
     <link href="css/hairsculture-layout-v8.css" rel="stylesheet" />
-    <link href="css/animations.css" rel="stylesheet" />
+
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -69,7 +69,7 @@
       sizes="16x16"
       href="images/favicons/favicon-16x16.png"
     />
-    <link rel="manifest" href="images/favicons/site.webmanifest" />
+
     <link
       rel="mask-icon"
       href="images/favicons/safari-pinned-tab.svg"
@@ -96,6 +96,11 @@
       content="https://www.ffhairstudio.com/images/twitter.png"
     />
     <script src="mainScript.js" defer></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/menu/menu.js"></script>
+    <script src="js/css3-animate-it.js"></script>
+    <script src="js/jqueryAll.js"></script>
+    <script src="layout/script.js"></script>
     <script>
       function showIt() {
         document.getElementById("mobMEnu").style.visibility = "visible";
@@ -131,14 +136,14 @@
                 Hair Loss <span>Fusion Fame Hair Studio</span>
               </h1>
               <p>
-                <figure class="image-left">
+                <!-- <figure class="image-left">
                   <img
                     src="./images/hair-fix-main-img.jpg"
-                    alt="Non Surgical Hair Replacement Kerala"
+                    alt="Non Surgical Hair Replacement Hyderabad"
                     width="494"
                     height="470"
                   />
-                </figure>
+                </figure> -->
                 Before we tell you about hair loss, let’s understand hair first.
                 Each strand of hair consists of the root called Follicle, which
                 is under the scalp. Above the scalp, the part of the hair that
@@ -284,7 +289,7 @@
                           <figure class="icnLoss">
                             <img
                               src="./images/icn-dietery.png"
-                              alt="Hair Fixing in Kerala"
+                              alt="Hair Fixing in Hyderabad"
                               width="86"
                               height="86"
                             />
@@ -391,7 +396,7 @@
         </div>
       </section>
       <!-- end sub btm wrapp -->
-      <div class="btmQuickLInks">
+      <!-- <div class="btmQuickLInks">
         <div class="container">
           <ul>
             <li>
@@ -424,7 +429,7 @@
           </ul>
           <div class="clear"></div>
         </div>
-      </div>
+      </div> -->
       <footer id="footerCommon"></footer>
       <div class="clear"></div>
     </div>
@@ -583,10 +588,6 @@
       <div class="clear"></div>
     </div>
 
-    <script src="layout/vue.js"></script>
-    <script src="layout/addressslider.js?v=2"></script>
-
-    <script src="layout/layout.js"></script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/webfontloader.js"></script>
@@ -660,57 +661,7 @@
         });
       });
     </script>
-    <script>
-      window.addEventListener(
-        "load",
-        function () {
-          function go() {
-            i = i < width ? i + step : 1;
-            m.style.marginLeft = -i + "px";
-          }
-          var i = 0,
-            step = 3,
-            space = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-          var m = document.getElementById("marquee");
-          var t = m.innerHTML; //text
-          m.innerHTML = t + space;
-          m.style.position = "absolute"; // http://stackoverflow.com/questions/2057682/determine-pixel-length-of-string-in-javascript-jquery/2057789#2057789
-          var width = m.clientWidth + 1;
-          m.style.position = "";
-          m.innerHTML =
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space;
-          m.addEventListener(
-            "mouseenter",
-            function () {
-              step = 0;
-            },
-            true
-          );
-          m.addEventListener(
-            "mouseleave",
-            function () {
-              step = 3;
-            },
-            true
-          );
-          var x = setInterval(go, 100);
-        },
-        true
-      );
-    </script>
+
     <div>
       <link href="js/colorbox/colorbox.css" rel="stylesheet" type="text/css" />
       <script src="js/colorbox/jquery.colorbox.js"></script>
@@ -825,58 +776,7 @@
       };
     </script>
 
-    <script>
-      window.addEventListener(
-        "load",
-        function () {
-          function go() {
-            i = i < width ? i + step : 1;
-            m.style.marginLeft = -i + "px";
-          }
-          var i = 0,
-            step = 3,
-            space = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-          var m = document.getElementById("marquee01");
-          var t = m.innerHTML; //text
-          m.innerHTML = t + space;
-          m.style.position = "absolute";
 
-          var width = m.clientWidth + 1;
-          m.style.position = "";
-          m.innerHTML =
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space +
-            t +
-            space;
-          m.addEventListener(
-            "mouseenter",
-            function () {
-              step = 0;
-            },
-            true
-          );
-          m.addEventListener(
-            "mouseleave",
-            function () {
-              step = 3;
-            },
-            true
-          );
-          var x = setInterval(go, 100);
-        },
-        true
-      );
-    </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
