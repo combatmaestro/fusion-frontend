@@ -33,13 +33,13 @@
   max-width: 240px; /* Bigger logo for desktop */
   height: auto;
   display: block;
-  margin-top: -85px; /* Move the logo upward */
+  margin-top: 5px; /* Move the logo upward */
 }
 
 /* Fixed state - shrink a little if needed */
 .fixed .siteLogo img.logo-img {
   max-width: 200px;
-  margin-top: -60px;
+  margin-top: 45px;
 }
 
 /* Medium screens */
@@ -47,12 +47,12 @@
   .siteLogo img.logo-img {
         max-width: 200px;
         margin-left: -29px;
-        margin-top: -35px;
+        margin-top: 45px;
   }
 
 .fixed .siteLogo img.logo-img {
   max-width: 190px;
-  margin-top: -10px;
+  margin-top: 45px;
 }
 }
 
@@ -61,12 +61,12 @@
   .siteLogo img.logo-img {
         margin-left: -20px;
         max-width: 170px;
-        margin-top: -12px;
+        margin-top: 5px;
   }
 
 .fixed .siteLogo img.logo-img {
   max-width: 170px;
-  margin-top: -10px;
+  margin-top: 45px;
 }
 
 }

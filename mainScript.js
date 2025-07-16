@@ -1,3 +1,4 @@
+ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById('submitBtn').addEventListener("click", async (e) => {
         e.preventDefault();
 
@@ -38,5 +39,6 @@ document.getElementById('submitBtn').addEventListener("click", async (e) => {
           alert("There was a problem submitting your request.");
         }
       });
+    })
 
 
