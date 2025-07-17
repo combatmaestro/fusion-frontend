@@ -4290,7 +4290,8 @@ em.mm-counter + a.mm-next + label.mm-toggle + span {
 .mh-head .hamburger-inner,
 .mh-head .hamburger-inner:after,
 .mh-head .hamburger-inner:before {
-  background: #d90707;
+  /* background: #d90707; */
+  background: #fefefe;
 }
 
 /* -------------------------------------------------------------------------------------------- 
