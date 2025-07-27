@@ -344,7 +344,16 @@ figure {
                            bx slider
 
   -------------------------------------------------------------------------------------------- */
+.non-sticky-menu {
+  position: static !important;
+}
 
+/* Hide top menu completely on desktop after scroll */
+@media (min-width: 768px) {
+  .non-sticky-menu {
+    display: none;
+  }
+}
 .bx-wrapper {
   position: relative;
   margin-bottom: 0px;
@@ -4286,6 +4295,7 @@ em.mm-counter + a.mm-next + label.mm-toggle + span {
   font-size: 16px;
   font-weight: bold;
 }
+
 
 .mh-head .hamburger-inner,
 .mh-head .hamburger-inner:after,
