@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog • Fusion</title>
+  <meta name="description" content="Latest updates, tips, and news from Fusion." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="canonical" href="/blog.html" />
+
+  <!--
+    NOTE: If your project already has a global stylesheet, you can remove
+    the scoped styles below. They are scoped under #blog-page to avoid conflicts.
+  -->
+  <style>
+    :root{--bg:#0b0c10;--panel:#111317;--muted:#9aa3af;--text:#e5e7eb;--brand:#4f46e5;--card:#151922;--card2:#0f172a}
+    #blog-page{color:var(--text);background:var(--bg);min-height:100dvh;display:flex;flex-direction:column}
+    #blog-page a{color:var(--brand);text-decoration:none}
+    #blog-page a:hover{text-decoration:underline}
+    .container{width:min(1100px,92%);margin-inline:auto}
+    header.site-header{position:sticky;top:0;z-index:10;background:rgba(11,12,16,.7);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.3px}
+    .brand img{height:28px;width:28px}
+    .nav a{font-size:.95rem;padding:.5rem .75rem;border-radius:.6rem}
+    .nav a.active{background:rgba(79,70,229,.12)}
+
+    .hero{padding:42px 0 8px}
+    .hero h1{font-size:clamp(1.6rem,2.2vw,2.2rem);margin:.2rem 0 .4rem}
+    .hero p{color:var(--muted);max-width:62ch}
+
+    .controls{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 22px}
+    .control{background:var(--panel);border:1px solid rgba(255,255,255,.06);padding:.6rem .8rem;border-radius:.8rem}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+
+    .card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+    .thumb{aspect-ratio:16/9;background:#0f1115;display:block;width:100%;object-fit:cover}
+    .content{padding:14px 14px 10px}
+    .meta{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:.85rem;margin-bottom:8px}
+    .title{font-size:1.06rem;font-weight:700;margin:2px 0 8px}
+    .excerpt{color:#cbd5e1;font-size:.95rem;line-height:1.45}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .tag{background:rgba(148,163,184,.14);border:1px solid rgba(148,163,184,.22);padding:.2rem .55rem;border-radius:999px;font-size:.8rem;color:#cbd5e1}
+
+    .read-more{margin:12px 14px 16px}
+    .read-more a{display:inline-flex;align-items:center;gap:6px;padding:.5rem .75rem;border:1px solid rgba(255,255,255,.12);border-radius:10px}
+
+    footer{margin-top:auto;border-top:1px solid rgba(255,255,255,.06);background:var(--panel)}
+    footer .container{padding:16px 0;color:var(--muted);font-size:.9rem}
+
+    /* Article modal (simple) */
+    dialog#post-modal{width:min(860px,92%);border:none;border-radius:16px;padding:0;background:linear-gradient(180deg,var(--card),var(--card2));color:var(--text)}
+    dialog::backdrop{background:rgba(0,0,0,.6)}
+    .modal-header{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .modal-body{padding:16px}
+    .close-btn{background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--text);border-radius:10px;padding:.35rem .6rem;cursor:pointer}
+    .prose{color:#e2e8f0;line-height:1.65}
+    .prose h2{font-size:1.25rem;margin:1rem 0 .25rem}
+    .prose p{margin:.5rem 0}
+    .prose ul{margin:.5rem 0 .5rem 1.25rem}
+  </style>
+</head>
+<body id="blog-page">
+  <!-- Replace this header with your site's existing navbar markup if you have one -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/index.html" aria-label="Fusion Home">
+        <img src="/assets/logo.svg" alt="Fusion" onerror="this.style.display='none'"/>
+        <span>Fusion</span>
+      </a>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/blog.html" class="active" aria-current="page">Blog</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-labelledby="blog-heading">
+      <h1 id="blog-heading">Blog</h1>
+      <p>Updates, tutorials, and announcements. New posts appear automatically from <code>posts.json</code>.</p>
+      <div class="controls" aria-label="Filters and search">
+        <input id="search" class="control" type="search" placeholder="Search posts…" aria-label="Search posts" />
+        <select id="filterTag" class="control" aria-label="Filter by tag">
+          <option value="">All tags</option>
+        </select>
+      </div>
+    </section>
+
+    <section aria-live="polite">
+      <div id="grid" class="grid" role="list"></div>
+      <template id="card-tpl">
+        <article class="card" role="listitem">
+          <img class="thumb" alt="" />
+          <div class="content">
+            <div class="meta">
+              <time class="date" datetime=""></time>
+              <span class="dot">•</span>
+              <span class="read"></span>
+            </div>
+            <h2 class="title"></h2>
+            <p class="excerpt"></p>
+            <div class="tags"></div>
+          </div>
+          <div class="read-more">
+            <a class="open-modal" href="#">Read more →</a>
+          </div>
+        </article>
+      </template>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Fusion. All rights reserved.</div>
+  </footer>
+
+  <dialog id="post-modal">
+    <div class="modal-header">
+      <strong id="modal-title">Post</strong>
+      <button class="close-btn" id="close-modal" aria-label="Close">Close</button>
+    </div>
+    <div class="modal-body">
+      <article class="prose" id="modal-body"></article>
+    </div>
+  </dialog>
+
+  <script>
+    // --- Configuration ---
+    const DATA_URLS = [
+      './data/posts.json', // preferred: create data/posts.json in your repo
+      './posts.json'       // fallback
+    ];
+
+    // --- Helpers ---
+    const $ = (sel, ctx=document) => ctx.querySelector(sel);
+    const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+   const escapeHTML = (s = '') =>
+  s.replace(/[&<>"]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
+
+    const minutesToRead = (text) => Math.max(1, Math.round(text.split(/\s+/).length / 200));
+    const formatDate = (iso) => new Date(iso).toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
+
+    // Fallback posts so the page works even before you add posts.json
+    const FALLBACK_POSTS = [
+      {
+        id: 'hair-patch-basics',
+        title: 'What Is a Hair Patch? (Quick Guide)',
+        date: '2025-08-10',
+        tags: ['Hair Care','Non-surgical'],
+        cover: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop',
+        excerpt: 'A simple, non-surgical solution for localized hair loss. Here’s how it works and who it’s for.',
+        content: `
+          <p>A hair patch is a custom piece that blends with your existing hair to cover bald spots. It is attached using adhesive or clips and styled to match your natural look.</p>
+          <h2>Key Benefits</h2>
+          <ul>
+            <li>Instant, natural-looking coverage</li>
+            <li>Non-surgical and reversible</li>
+            <li>Customisable size, density, and style</li>
+          </ul>
+          <p>Maintenance typically involves periodic servicing for re-bonding and grooming.</p>
+        `
+      },
+      {
+        id: 'hair-bonding-benefits',
+        title: 'Hair Bonding: Pros, Care, and Myths',
+        date: '2025-08-15',
+        tags: ['Hair Care'],
+        cover: 'https://images.unsplash.com/photo-1593702288056-7927c67b17a5?q=80&w=1200&auto=format&fit=crop',
+        excerpt: 'Bonding offers a secure hold for patches and extensions. Learn how long it lasts and how to care for it.',
+        content: `
+          <p>Hair bonding uses medical-grade adhesive to attach a patch or weft to your scalp or hair. With proper care, bonding can last several weeks per session.</p>
+          <p>Keep the scalp clean and avoid oil-heavy products near the bond line.</p>
+        `
+      }
+    ];
+
+    const state = { posts: [], tags: new Set() };
+
+    async function loadPosts() {
+      for (const url of DATA_URLS) {
+        try {
+          const res = await fetch(url, { cache: 'no-store' });
+          if (res.ok) {
+            const json = await res.json();
+            if (Array.isArray(json)) return json;
+            if (Array.isArray(json.posts)) return json.posts;
+          }
+        } catch (e) { /* try next */ }
+      }
+      return FALLBACK_POSTS;
+    }
+
+    function renderPosts(list) {
+      const grid = $('#grid');
+      grid.innerHTML = '';
+      const tpl = $('#card-tpl');
+      list.forEach(post => {
+        const node = tpl.content.cloneNode(true);
+        const img = node.querySelector('.thumb');
+        const time = node.querySelector('.date');
+        const read = node.querySelector('.read');
+        const title = node.querySelector('.title');
+        const excerpt = node.querySelector('.excerpt');
+        const tags = node.querySelector('.tags');
+        const open = node.querySelector('.open-modal');
+
+        if (post.cover) {
+          img.src = post.cover; img.alt = post.title || '';
+        } else { img.remove(); }
+
+        time.dateTime = post.date;
+        time.textContent = formatDate(post.date);
+        const plain = (post.content || '').replace(/<[^>]+>/g,' ');
+        read.textContent = `${minutesToRead(post.excerpt || plain)} min read`;
+        title.textContent = post.title || 'Untitled';
+        excerpt.textContent = post.excerpt || plain.slice(0, 140) + '…';
+
+        (post.tags || []).forEach(t => {
+          const b = document.createElement('span');
+          b.className = 'tag'; b.textContent = t; tags.appendChild(b);
+          state.tags.add(t);
+        });
+
+        open.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal(post);
+        });
+
+        grid.appendChild(node);
+      });
+
+      // Populate tag filter
+      const select = $('#filterTag');
+      const current = select.value;
+      select.innerHTML = '<option value="">All tags</option>' +
+        Array.from(state.tags).sort().map(t => `<option value="${escapeHTML(t)}">${escapeHTML(t)}</option>`).join('');
+      if (current) select.value = current;
+    }
+
+    function filterAndSearch() {
+      const q = $('#search').value.trim().toLowerCase();
+      const tag = $('#filterTag').value;
+      const filtered = state.posts.filter(p => {
+        const hay = `${p.title} ${p.excerpt} ${(p.tags||[]).join(' ')} ${(p.content||'').replace(/<[^>]+>/g,' ')}`.toLowerCase();
+        const matchQ = !q || hay.includes(q);
+        const matchTag = !tag || (p.tags||[]).includes(tag);
+        return matchQ && matchTag;
+      });
+      renderPosts(filtered);
+    }
+
+    function openModal(post) {
+      const dlg = document.getElementById('post-modal');
+      document.getElementById('modal-title').textContent = post.title || 'Post';
+      document.getElementById('modal-body').innerHTML = post.content || '<p>No content.</p>';
+      if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open','');
+    }
+
+    document.getElementById('close-modal').addEventListener('click', () => {
+      const dlg = document.getElementById('post-modal');
+      dlg.close ? dlg.close() : dlg.removeAttribute('open');
+    });
+
+    document.getElementById('search').addEventListener('input', filterAndSearch);
+    document.getElementById('filterTag').addEventListener('change', filterAndSearch);
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (async function init(){
+      const posts = await loadPosts();
+      // Sort newest first
+      posts.sort((a,b) => (new Date(b.date)) - (new Date(a.date)));
+      state.posts = posts;
+      renderPosts(posts);
+    })();
+  </script>
+
+  <!--
+    QUICK START: Create data/posts.json with an array of posts, e.g.
+    [
+      {
+        "id": "welcome",
+        "title": "Welcome to the Fusion Blog",
+        "date": "2025-08-25",
+        "tags": ["Update"],
+        "cover": "/assets/blog/welcome.jpg",
+        "excerpt": "A quick intro to our new blog page.",
+        "content": "<p>Hello! This is our blog. We'll share updates here.</p>"
+      }
+    ]
+  -->
+</body>
+</html>
