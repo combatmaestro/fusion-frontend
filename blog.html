@@ -115,94 +115,96 @@
     <link rel="stylesheet" href="js/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="js/assets/owl.theme.default.min.css" />
     <link href="css/hairsculture-layout-v8.css" rel="stylesheet" />
-<style>
-  /* Blog styles (scoped) */
-  .blog-intro {
-    max-width: 780px;
-    margin: 10px auto 0;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #444;
-    text-align: center;
-  }
+    <style>
+      /* Blog styles (scoped) */
+      .blog-intro {
+        max-width: 780px;
+        margin: 10px auto 0;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: #444;
+        text-align: center;
+      }
 
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 18px;
-    margin: 24px 0 40px;
-  }
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+        margin: 24px 0 40px;
+      }
 
-  .blog-card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    transition: transform .2s ease, box-shadow .2s ease;
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-  }
-  .blog-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
-  }
+      .blog-card {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+      .blog-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+      }
 
-  .blog-thumb {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    background: linear-gradient(135deg, #e8ecf3, #f6f8fb);
-    display: block;
-  }
+      .blog-thumb {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        background: linear-gradient(135deg, #e8ecf3, #f6f8fb);
+        display: block;
+      }
 
-  .blog-content {
-    padding: 14px 14px 16px;
-  }
+      .blog-content {
+        padding: 14px 14px 16px;
+      }
 
-  .blog-meta {
-    font-size: .88rem;
-    color: #6b7280;
-    margin-bottom: 6px;
-  }
+      .blog-meta {
+        font-size: 0.88rem;
+        color: #6b7280;
+        margin-bottom: 6px;
+      }
 
-  .blog-title {
-    font-size: 1.08rem;
-    margin: 6px 0 8px;
-    color: #111827;
-    line-height: 1.35;
-  }
+      .blog-title {
+        font-size: 1.08rem;
+        margin: 6px 0 8px;
+        color: #111827;
+        line-height: 1.35;
+      }
 
-  .blog-excerpt {
-    color: #4b5563;
-    font-size: .98rem;
-    line-height: 1.55;
-  }
+      .blog-excerpt {
+        color: #4b5563;
+        font-size: 0.98rem;
+        line-height: 1.55;
+      }
 
-  .blog-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-  }
-  .blog-tag {
-    font-size: .78rem;
-    background: #f3f4f6;
-    color: #374151;
-    padding: .22rem .55rem;
-    border-radius: 999px;
-    border: 1px solid #e5e7eb;
-  }
+      .blog-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .blog-tag {
+        font-size: 0.78rem;
+        background: #f3f4f6;
+        color: #374151;
+        padding: 0.22rem 0.55rem;
+        border-radius: 999px;
+        border: 1px solid #e5e7eb;
+      }
 
-  .blog-readmore {
-    margin-top: 12px;
-    display: inline-block;
-    font-weight: 600;
-    color: #0a66c2;
-    text-decoration: none;
-  }
-  .blog-readmore:hover { text-decoration: underline; }
-</style>
+      .blog-readmore {
+        margin-top: 12px;
+        display: inline-block;
+        font-weight: 600;
+        color: #0a66c2;
+        text-decoration: none;
+      }
+      .blog-readmore:hover {
+        text-decoration: underline;
+      }
+    </style>
 
     <!-- Scripts -->
 
@@ -264,108 +266,101 @@
         <div class="clear"></div>
       </div>
       <!-- Blog Section -->
-<section id="subPage">
-  <div class="cntpage">
-    <div class="container">
-      <article>
-        <h1 class="about-title">
-          Blog <span>Fusion Fame Hair Studio</span>
-        </h1>
-        <p class="blog-intro">
-          Tips, guides, and real results about Hair Patches, Bonding, Fixing, and Extensions.
-          Learn how our non-surgical solutions deliver a natural look with zero downtime.
-        </p>
-      </article>
-      <div class="clear"></div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="blog-grid">
-      <!-- Post 1 -->
-      <article class="blog-card">
-        <img class="blog-thumb" src="images/hair-patch-fusion-fame-blog-thumb" alt="What is a Hair Patch?" >
-        <div class="blog-content">
-          <div class="blog-meta">
-            <time datetime="2025-08-10">Aug 26, 2025</time> 
+      <section id="subPage">
+        <div class="cntpage">
+          <div class="container">
+            <article>
+              <h1 class="about-title">
+                Blog <span>Fusion Fame Hair Studio</span>
+              </h1>
+              <p class="blog-intro">
+                Tips, guides, and real results about Hair Patches, Bonding,
+                Fixing, and Extensions. Learn how our non-surgical solutions
+                deliver a natural look with zero downtime.
+              </p>
+            </article>
+            <div class="clear"></div>
           </div>
-          <h2 class="blog-title">What is a Hair Patch and How good can it be to you? </h2>
-          <p class="blog-excerpt">
-           A hair patch is a non-surgical solution for men and women facing baldness or thinning hair. Unlike wigs that cover the entire scalp, a hair patch is a custom-made hair system designed to cover only the bald spot or affected area. It is lightweight, breathable, and blends naturally with your existing hair, making it almost undetectable.
-          </p>
-          <div class="blog-tags">
-            <span class="blog-tag">Hair Patch</span>
-            <span class="blog-tag">Non-Surgical</span>
-          </div>
-          <a class="blog-readmore" href="blog/how-good-can-be-a-hair-patch.html">Read more →</a>
         </div>
-      </article>
 
-      <!-- Post 2 -->
-      <article class="blog-card">
-        <img class="blog-thumb" src="images/blog/hair-bonding.jpg" alt="Hair Bonding Benefits" onerror="this.src='images/blog/placeholder-2.jpg'">
-        <div class="blog-content">
-          <div class="blog-meta">
-            <time datetime="2025-08-15">Aug 26, 2025</time> 
+        <div class="container">
+          <div class="blog-grid">
+            <!-- Post 1 -->
+            <article class="blog-card">
+              <img
+                class="blog-thumb"
+                src="images/hair-patch-fusion-fame-blog-thumb"
+                alt="What is a Hair Patch?"
+              />
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <time datetime="2025-08-10">Aug 26, 2025</time>
+                </div>
+                <h2 class="blog-title">
+                  What is a Hair Patch and How good can it be to you?
+                </h2>
+                <p class="blog-excerpt">
+                  A hair patch is a non-surgical solution for men and women
+                  facing baldness or thinning hair. Unlike wigs that cover the
+                  entire scalp, a hair patch is a custom-made hair system
+                  designed to cover only the bald spot or affected area. It is
+                  lightweight, breathable, and blends naturally with your
+                  existing hair, making it almost undetectable.
+                </p>
+                <div class="blog-tags">
+                  <span class="blog-tag">Hair Patch</span>
+                  <span class="blog-tag">Best Hair Patches in Hyderabad</span>
+                  <span class="blog-tag">Fusion Fame Hair Studio</span>
+                  <span class="blog-tag">Hair Patches</span>
+                  <span class="blog-tag">Best Hair Service</span>
+                  <span class="blog-tag">Best Hair Wigs</span>
+                  
+                </div>
+                <a
+                  class="blog-readmore"
+                  href="blog/how-good-can-be-a-hair-patch.html"
+                  >Read more →</a
+                >
+              </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="blog-card">
+              <img
+                class="blog-thumb"
+                src="images/HAIR-BONDING-2.png"
+                alt="Hair Bonding Benefits"
+                onerror="this.src='images/blog/placeholder-2.jpg'"
+              />
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <time datetime="2025-08-15">Sep 08, 2025</time>
+                </div>
+                <h2 class="blog-title">Hair Bonding: Pros, Care & Myths</h2>
+                <p class="blog-excerpt">
+                  Hair bonding (sometimes called patch bonding or
+                  hair patch application) uses a small, custom hair system attached
+                  to the scalp or existing hair with skin-friendly adhesive, medical
+                  tape, or micro-clips. Unlike a full wig, bonding targets localized
+                  thinning — a receding hairline, crown thinning, or a bald patch —
+                  delivering a realistic hairline and immediate volume.
+                </p>
+                <div class="blog-tags">
+                  <span class="blog-tag">Hair Bonding</span>
+                  <span class="blog-tag">Hair Bonding in Hyderabad</span>
+                  <span class="blog-tag">Non-Surgical Hair Replacement</span>
+                  <span class="blog-tag">Fusion Fame Hair Studio</span>
+                  <span class="blog-tag">Hair Bonding Price</span>
+                </div>
+                <a class="blog-readmore" href="#">Read more →</a>
+              </div>
+            </article>
+
           </div>
-          <h2 class="blog-title">Hair Bonding: Pros, Care & Myths</h2>
-          <p class="blog-excerpt">
-            Medical-grade adhesive for a secure, natural hold. Know how long it lasts,
-            what to avoid, and how to keep your bond line clean.
-          </p>
-          <div class="blog-tags">
-            <span class="blog-tag">Bonding</span>
-            <span class="blog-tag">Care</span>
-          </div>
-          <a class="blog-readmore" href="#">Read more →</a>
         </div>
-      </article>
+      </section>
 
-      <!-- Post 3 -->
-      <article class="blog-card">
-        <img class="blog-thumb" src="images/blog/hair-fixing.jpg" alt="Hair Fixing Explained" onerror="this.src='images/blog/placeholder-3.jpg'">
-        <div class="blog-content">
-          <div class="blog-meta">
-            <time datetime="2025-08-19">Aug 19, 2025</time> · 3 min read
-          </div>
-          <h2 class="blog-title">Hair Fixing: Techniques & Maintenance</h2>
-          <p class="blog-excerpt">
-            From clipping to micro-wefts, explore popular hair fixing methods and the simple
-            maintenance routine that keeps them fresh.
-          </p>
-          <div class="blog-tags">
-            <span class="blog-tag">Hair Fixing</span>
-            <span class="blog-tag">Maintenance</span>
-          </div>
-          <a class="blog-readmore" href="#">Read more →</a>
-        </div>
-      </article>
-
-      <!-- Post 4 -->
-      <article class="blog-card">
-        <img class="blog-thumb" src="images/blog/hair-extensions.jpg" alt="Hair Extensions Guide" onerror="this.src='images/blog/placeholder-4.jpg'">
-        <div class="blog-content">
-          <div class="blog-meta">
-            <time datetime="2025-08-22">Aug 22, 2025</time> · 2 min read
-          </div>
-          <h2 class="blog-title">Extensions: Instant Volume & Length</h2>
-          <p class="blog-excerpt">
-            Tape-ins or clip-ins? Choose the right extension type for your style, lifestyle,
-            and budget—without damaging your natural hair.
-          </p>
-          <div class="blog-tags">
-            <span class="blog-tag">Extensions</span>
-            <span class="blog-tag">Styling</span>
-          </div>
-          <a class="blog-readmore" href="#">Read more →</a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-            <footer id="footerCommon"></footer>
+      <footer id="footerCommon"></footer>
       <div class="clear"></div>
     </div>
     <!-- end page -->
@@ -603,7 +598,6 @@
         </li>
       </ul>
     </div>
-    
 
     <script src="js/css3-animate-it.js" defer></script>
     <script>
