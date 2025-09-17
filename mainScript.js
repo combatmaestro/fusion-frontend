@@ -10,7 +10,7 @@ document.getElementById('submitBtn').addEventListener("click", async (e) => {
         };
 
         try {
-          const response = await fetch("http://localhost:5000/api/enquiries", {
+          const response = await fetch("https://fusion-fame-server.vercel.app/api/enquiries", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
